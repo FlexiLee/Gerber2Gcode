@@ -1,6 +1,7 @@
 import string
 
 #输入文件
+#打开的文件应该是GERBER_RS274X格式
 f = open(r'C:\DRV8811_copper_bottom.gbr') 
 #输出文件
 fw = open(r'C:\DRV8811_copper_bottom.gcode','w')
