@@ -23,16 +23,16 @@ for line in lines:
         line1=L[0] + ' '
         
         line2=L[1] 
-
-        line3=string.atof(L[2] )/1000
+        #line3=string.atof(L[2] )/10000  #mm为单位
+        line3=string.atof(L[2] )/393.7  #英寸为单位转为mm
         #print line3
         line3 = "%s" % line3
         #print line3
         #line3=str(line3)
         
         line4=' '+L[3]
-        
-        line5=string.atof(L[4])/1000
+        #line5=string.atof(L[4])/10000  #mm为单位
+        line5=string.atof(L[4])/393.7     #英寸为单位转为mm
         line5 = "%s"%line5
         
         line6=' '+L[5]
