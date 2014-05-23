@@ -2,9 +2,9 @@ import string
 
 #输入文件
 #打开的文件应该是GERBER_RS274X格式
-f = open(r'C:\DRV8811_copper_bottom.gbr') 
+f = open(r'C:\1') 
 #输出文件
-fw = open(r'C:\DRV8811_copper_bottom.gcode','w')
+fw = open(r'C:\1.gcode','w')
 #按行读出所有文本
 lines = f.readlines()
 for line in lines:
@@ -21,24 +21,34 @@ for line in lines:
     L = string.split(line)
     if(len(L)==7):
         line1=L[0] + ' '
-        fw.writelines(line1)
+        
         line2=L[1] 
-        fw.writelines(line2)
-        line3=string.atof(L[2] )/10000
+
+        line3=string.atof(L[2] )/1000
         #print line3
         line3 = "%s" % line3
         #print line3
         #line3=str(line3)
-        fw.writelines(line3)
+        
         line4=' '+L[3]
-        fw.writelines(line4)
-        line5=string.atof(L[4])/10000
+        
+        line5=string.atof(L[4])/1000
         line5 = "%s"%line5
-        fw.writelines(line5)
+        
         line6=' '+L[5]
-        fw.writelines(line6)
+        
         line7=L[6]
+
+        fw.writelines('G01')
+        fw.writelines(line6)
         fw.writelines(line7)
+        fw.writelines('\n')
+        
+        fw.writelines(line1)
+        fw.writelines(line2)
+        fw.writelines(line3)
+        fw.writelines(line4)
+        fw.writelines(line5)
         fw.writelines('\n')
 f.close()
 fw.close()
