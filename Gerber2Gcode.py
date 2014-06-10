@@ -1,4 +1,4 @@
-#雕刻PCB
+#CNC雕刻PCB
 #
 
 import string
